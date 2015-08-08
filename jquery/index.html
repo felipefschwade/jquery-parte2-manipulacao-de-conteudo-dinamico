@@ -72,6 +72,8 @@
     
     <div>
         Valor total: R$<span id="valor-total">0</span>
+        </br>
+        Quantidade de itens: <span id="quantidade-de-itens"></span>
     </div>
     
     <script src="jquery-2.1.4.min.js"></script>
@@ -84,6 +86,7 @@
             total += valor;
         }
         $("#valor-total").text(total);
+        $("#quantidade-de-itens").text(itens.length);
     </script>
 </body>
 </html>
