@@ -70,8 +70,15 @@
 	
 	</div>
     
+    <div>
+        Valor total: R$<span id="valor-total">0</span>
+        </br>
+        Quantidade de itens: <span id="quantidade-de-itens"></span>
+    </div>
+    
     <script src="jquery-2.1.4.min.js"></script>
     <script>
+        var aposInicializado = function(){
         var total = 0;
         var itens = $(".item-total");
         for (i = 0; i < itens.length; i++){
@@ -81,13 +88,10 @@
         }
         $("#valor-total").text(total);
         $("#quantidade-de-itens").text(itens.length);
+        
+        }
+        $(aposInicializado);
     </script>
-    
-    <div>
-        Valor total: R$<span id="valor-total">0</span>
-        </br>
-        Quantidade de itens: <span id="quantidade-de-itens"></span>
-    </div>
     
     
     
