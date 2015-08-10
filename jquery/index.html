@@ -85,11 +85,14 @@
     
     <script src="jquery-2.1.4.min.js"></script>
     <script>
-        $("#remove-item").on("click", removeItem);
-        var removeItem = function(){
-    
-        }
         
+        var removeItem = function(){
+            var quantidadestr = $("#quantidade-de-itens").text();
+            var atual = parseInt(quantidadestr);
+            var atual = atual - 1;
+            $("#quantidade-de-itens").text(atual);
+        }
+        $("#remove-item").on("click", removeItem);
         var aposInicializado = function(){
         var total = 0;
         var itens = $(".item-total");
@@ -100,7 +103,6 @@
         }
         $("#valor-total").text(total);
         $("#quantidade-de-itens").text(itens.length);
-        
         }
         $(aposInicializado);
         
