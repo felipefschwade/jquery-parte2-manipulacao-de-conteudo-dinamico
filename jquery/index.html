@@ -93,7 +93,7 @@
             var novaquantidade = atual - 1;
             $("#quantidade-de-itens").text(novaquantidade);
             var self = $(this);
-            self.parent().parent().remove();
+            self.closest("tr").remove();
         }
         $(".remove-item").on("click" , removeItem);
         var aposInicializado = function(){
