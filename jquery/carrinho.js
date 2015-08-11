@@ -17,12 +17,17 @@ var atualizaDados = function(){
             var novaquantidade = atual - 1;
             $("#quantidade-de-itens").text(novaquantidade);
             var self = $(this);
-            self.closest("tr").remove();
+            self.closest("tr").hide();
             atualizaDados();
+        }
+        
+        var undo = function(){
+            $("tr:hidden").show();
         }
         
         var aposInicializado = function(){
             atualizaDados();
+            $("#undo").on("click", undo);
             $(".remove-item").on("click" , removeItem);
         }
         $(aposInicializado);
