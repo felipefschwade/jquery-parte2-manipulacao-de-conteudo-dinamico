@@ -22,7 +22,7 @@ var atualizaDados = function(){
         }
         
         var undo = function(){
-            $("tr:hidden").show();
+            $("tr:hidden").show().addClass("recuperado");
         }
         
         var aposInicializado = function(){
