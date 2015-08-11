@@ -22,6 +22,7 @@ var atualizaDados = function(){
         }
         
         var undo = function(){
+            $("tr:visible").removeClass("recuperado");
             $("tr:hidden").show().addClass("recuperado");
         }
         
