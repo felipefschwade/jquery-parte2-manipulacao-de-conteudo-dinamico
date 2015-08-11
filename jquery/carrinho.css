@@ -74,6 +74,10 @@ input[type=button] {
 	-webkit-appearance: none;
 }
 
+.recuperado{
+    background:#FE0;
+}
+
 .resumo {
 	background: #555;
 	color: white;
