@@ -94,6 +94,10 @@
             $("#quantidade-de-itens").text(novaquantidade);
             var self = $(this);
             self.closest("tr").remove();
+            var precoTotal = parseFloat($("#valor-total").text());
+            var precoItem = self.parent().prev();
+            var precoAtual = precoTotal - parseFloat(precoItem.text());
+            $("#valor-total").text(precoAtual);
         }
         $(".remove-item").on("click" , removeItem);
         var aposInicializado = function(){
