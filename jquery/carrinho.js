@@ -1,6 +1,6 @@
 var atualizaDados = function(){
              var total = 0;
-             var itens = $(".item-total");
+             var itens = $(".item-total:visible");
              for (i = 0; i < itens.length; i++){
                 var item = $(itens[i]).text();
                 var valor = parseFloat(item);
