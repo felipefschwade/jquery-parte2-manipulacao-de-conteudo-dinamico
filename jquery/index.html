@@ -95,7 +95,7 @@
             var self = $(this);
             self.closest("tr").remove();
             var precoTotal = parseFloat($("#valor-total").text());
-            var precoItem = self.parent().prev();
+            var precoItem = self.parent().siblings(".item-total");
             var precoAtual = precoTotal - parseFloat(precoItem.text());
             $("#valor-total").text(precoAtual);
         }
