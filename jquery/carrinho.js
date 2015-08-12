@@ -4,7 +4,7 @@ var atualizaDados = function(){
              for (i = 0; i < itens.length; i++){
                 var item = $(itens[i]).text();
                 var valor = parseFloat(item);
-                total += valor;
+                total += valor;     
              }
              $(".valor-total").text(total);
              $(".quantidade-de-itens").text(itens.length);
@@ -22,8 +22,9 @@ var atualizaDados = function(){
         }
         
         var undo = function(){
-            $("tr:visible").removeClass("recuperado");
-            $("tr:hidden").show().addClass("recuperado");
+            var carrinho = $(this).closest(".carrinho");
+            carrinho.find("tr:visible").removeClass("recuperado");
+            carrinho.find("tr:hidden").show().addClass("recuperado");
         }
         
         var aposInicializado = function(){
