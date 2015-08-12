@@ -6,16 +6,16 @@ var atualizaDados = function(){
                 var valor = parseFloat(item);
                 total += valor;
              }
-             $("#valor-total").text(total);
-             $("#quantidade-de-itens").text(itens.length);
+             $(".valor-total").text(total);
+             $(".quantidade-de-itens").text(itens.length);
         }
         
         var removeItem = function(event){
             event.preventDefault();
-            var quantidadestr = $("#quantidade-de-itens").text();
+            var quantidadestr = $(".quantidade-de-itens").text();
             var atual = parseInt(quantidadestr);
             var novaquantidade = atual - 1;
-            $("#quantidade-de-itens").text(novaquantidade);
+            $(".quantidade-de-itens").text(novaquantidade);
             var self = $(this);
             self.closest("tr").hide();
             atualizaDados();
