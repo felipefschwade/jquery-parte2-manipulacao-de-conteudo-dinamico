@@ -1,5 +1,6 @@
 <html>
 <head>
+    <meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="carrinho.css">
 </head>
 <body>
@@ -64,6 +65,32 @@
 					<td class="item-total">199.00</td>
                     <td><a class="remove-item" href="">(Remover)</a> </td>
 				</tr>
+			</tbody>
+		</table>
+	
+	</div>
+    
+    <div>
+        Valor total: R$<span id="valor-total">0</span>
+        </br>
+        Quantidade de itens: <span id="quantidade-de-itens"></span>
+    </div>
+    <div>
+        <input type="button" value="Undo" id="undo">
+    </div>
+    	<div class="carrinho">
+		<h2>Carrinho entrega em Vitória</h2>
+		<table>
+			<thead>
+				<tr>
+					<td></td>
+					<td>Nome</td>
+					<td>Quantidade</td>
+					<td>Valor</td>
+					<td>Total</td>
+				</tr>
+			</thead>
+			<tbody>
 				<tr>
 					<td><img src="imagens/camiseta.jpg"></td>
 					<td>Camiseta G</td>
@@ -85,6 +112,7 @@
     <div>
         <input type="button" value="Undo" id="undo">
     </div>
+    
     <script src="jquery-2.1.4.min.js"></script>
     <script src="carrinho.js"></script>
     
