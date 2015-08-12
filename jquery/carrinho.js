@@ -28,7 +28,7 @@ var atualizaDados = function(){
         
         var aposInicializado = function(){
             atualizaDados();
-            $("#undo").on("click", undo);
+            $(".undo").on("click", undo);
             $(".remove-item").on("click" , removeItem);
         }
         $(aposInicializado);
