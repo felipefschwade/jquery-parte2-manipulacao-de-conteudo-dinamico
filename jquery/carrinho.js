@@ -44,9 +44,13 @@ var atualizaDados = function(){
             carrinho.find("tr:hidden").show().addClass("recuperado");
             atualizaDados();
         }
+        var daDestaque = function() {
+            $(this).css("background" , "#ccc");
+        }
         
         var aposInicializado = function(){
             atualizaDados();
+            $("tr").hover(daDestaque);
             $(".undo").on("click", undo);
             $(".remove-item").on("click" , removeItem);
             $(".carrinho").each(function(){
