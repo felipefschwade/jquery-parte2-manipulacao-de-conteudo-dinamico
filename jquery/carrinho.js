@@ -53,7 +53,7 @@ var atualizaDados = function(){
         
         var aposInicializado = function(){
             atualizaDados();
-            $("tr").hover(daDestaque, tiraDestaque);
+            $("tbody tr").hover(daDestaque, tiraDestaque);
             $(".undo").on("click", undo);
             $(".remove-item").on("click" , removeItem);
             $(".carrinho").each(function(){
