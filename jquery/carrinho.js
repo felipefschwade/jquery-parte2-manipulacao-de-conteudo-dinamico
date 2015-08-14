@@ -45,12 +45,15 @@ var atualizaDados = function(){
             atualizaDados();
         }
         var daDestaque = function() {
-            $(this).css("background" , "#ccc");
+            $(this).addClass("hovering");
+        }
+        var tiraDestaque = function() {
+            $(this).removeClass("hovering");
         }
         
         var aposInicializado = function(){
             atualizaDados();
-            $("tr").hover(daDestaque);
+            $("tr").hover(daDestaque, tiraDestaque);
             $(".undo").on("click", undo);
             $(".remove-item").on("click" , removeItem);
             $(".carrinho").each(function(){
