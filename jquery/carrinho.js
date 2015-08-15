@@ -12,55 +12,61 @@ var umaPropaganda = function(){
 }
 
 var atualizaDados = function(){
-             var carrinhos = $(".carrinho");
-             carrinhos.each(function(){
-                 var carrinho = $(this);
-                 var total = 0;
-                 var itens = carrinho.find(".item-total:visible");
-                 for (i = 0; i < itens.length; i++){
-                    var item = $(itens[i]).text();
-                    var valor = parseFloat(item);
-                    total += valor;     
-                 }
-                 carrinho.find(".valor-total").text(total);
-                 carrinho.find(".quantidade-de-itens").text(itens.length);
-             });
-        }
-        
-        var removeItem = function(event){
-            event.preventDefault();
-            var quantidadestr = $(".quantidade-de-itens").text();
-            var atual = parseInt(quantidadestr);
-            var novaquantidade = atual - 1;
-            $(".quantidade-de-itens").text(novaquantidade);
-            var self = $(this);
-            self.closest("tr").hide();
-            atualizaDados();
-        }
-        
-        var undo = function(){
-            var carrinho = $(this).closest(".carrinho");
-            carrinho.find("tr:visible").removeClass("recuperado");
-            carrinho.find("tr:hidden").show().addClass("recuperado");
-            atualizaDados();
-        }
-        var daDestaque = function() {
-            $(this).addClass("hovering");
-        }
-        var tiraDestaque = function() {
-            $(this).removeClass("hovering");
-        }
-        
-        var aposInicializado = function(){
-            atualizaDados();
-            $("tbody tr").hover(daDestaque, tiraDestaque);
-            $(".undo").on("click", undo);
-            $(".remove-item").on("click" , removeItem);
-            $(".carrinho").each(function(){
-                $(this).find("tr:nth-child(3n),tr:last").each(function(){
-                    umaPropaganda().insertAfter($(this));
-                });
-            });
-        }
-        $(aposInicializado);
-        
+     var carrinhos = $(".carrinho");
+     carrinhos.each(function(){
+         var carrinho = $(this);
+         var total = 0;
+         var itens = carrinho.find(".item-total:visible");
+         for (i = 0; i < itens.length; i++){
+            var item = $(itens[i]).text();
+            var valor = parseFloat(item);
+            total += valor;     
+         }
+         carrinho.find(".valor-total").text(total);
+         carrinho.find(".quantidade-de-itens").text(itens.length);
+     });
+}
+
+var removeItem = function(event){
+    event.preventDefault();
+    var quantidadestr = $(".quantidade-de-itens").text();
+    var atual = parseInt(quantidadestr);
+    var novaquantidade = atual - 1;
+    $(".quantidade-de-itens").text(novaquantidade);
+    var self = $(this);
+    self.closest("tr").hide();
+    atualizaDados();
+}
+
+var undo = function(){
+    var carrinho = $(this).closest(".carrinho");
+    carrinho.find("tr:visible").removeClass("recuperado");
+    carrinho.find("tr:hidden").show().addClass("recuperado");
+    atualizaDados();
+}
+
+var daDestaque = function() {
+    $(this).addClass("hovering");
+}
+var tiraDestaque = function() {
+    $(this).removeClass("hovering");
+}
+
+var escondePropagandas = function() {
+    $(".propaganda").hide();
+    event.preventDefault();
+}
+
+var aposInicializado = function(){
+    $("#esconde-propagandas").on("click", escondePropagandas);
+    atualizaDados();
+    $("tbody tr").hover(daDestaque, tiraDestaque);
+    $(".undo").on("click", undo);
+    $(".remove-item").on("click" , removeItem);
+    $(".carrinho").each(function(){
+        $(this).find("tr:nth-child(3n),tr:last").each(function(){
+            umaPropaganda().insertAfter($(this));
+        });
+    });
+}
+$(aposInicializado);
