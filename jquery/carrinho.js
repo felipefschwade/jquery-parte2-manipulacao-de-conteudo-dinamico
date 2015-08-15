@@ -54,7 +54,8 @@ var tiraDestaque = function() {
 
 var alternaPropagandas = function() {
     event.preventDefault();
-    $(".propaganda").toggle();
+    $(".propaganda").fadeToggle();
+    $(".alterna-propagandas").toggle();
 }
 
 var aposInicializado = function(){
