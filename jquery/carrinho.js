@@ -53,11 +53,11 @@ var tiraDestaque = function() {
 }
 
 var escondePropagandas = function() {
-    $(".propaganda").hide();
+    $(".propaganda").fadeOut();
     event.preventDefault();
 }
 var mostraPropagandas = function() {
-    $(".propaganda").show();
+    $(".propaganda").fadeIn();
     event.preventDefault();
 }
 
