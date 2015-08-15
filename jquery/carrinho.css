@@ -49,6 +49,11 @@ td {
 .hovering{
     background-color: #ccc;
 }
+
+#mostra-propagandas{ 
+    display:none;
+}
+
 .remove-item {	
 	background: #F30;
 	border-radius: 2px;
