@@ -56,9 +56,15 @@ var escondePropagandas = function() {
     $(".propaganda").hide();
     event.preventDefault();
 }
+var mostraPropagandas = function() {
+    $(".propaganda").show();
+    event.preventDefault();
+}
 
 var aposInicializado = function(){
     $("#esconde-propagandas").on("click", escondePropagandas);
+    $("#mostra-propagandas").on("click", mostraPropagandas);
+    
     atualizaDados();
     $("tbody tr").hover(daDestaque, tiraDestaque);
     $(".undo").on("click", undo);
