@@ -52,18 +52,13 @@ var tiraDestaque = function() {
     $(this).removeClass("hovering");
 }
 
-var escondePropagandas = function() {
-    $(".propaganda").fadeOut();
+var alternaPropagandas = function() {
     event.preventDefault();
-}
-var mostraPropagandas = function() {
-    $(".propaganda").fadeIn();
-    event.preventDefault();
+    $(".propaganda").toggle();
 }
 
 var aposInicializado = function(){
-    $("#esconde-propagandas").on("click", escondePropagandas);
-    $("#mostra-propagandas").on("click", mostraPropagandas);
+    $(".alterna-propagandas").on("click", alternaPropagandas);
     
     atualizaDados();
     $("tbody tr").hover(daDestaque, tiraDestaque);
